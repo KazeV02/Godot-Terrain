@@ -1,8 +1,11 @@
 shader_type spatial;
 render_mode cull_disabled;
 
+
+uniform float Octaves;
+uniform float Frequency;
+uniform float Amplitude;
 const float point_offset = 1.0;
-//uniform float amplitude = 100.0;
 
 //float triangle(float f) {
 	//return 1.0 - 2.0 * abs(f - 0.5);
@@ -84,9 +87,9 @@ void vertex() {
 	vec2 vert = (VERTEX.zx + vec2(50)) / 100.0;
 	
 	// Sampling noise (Point, Octaves, Frequency)
-	float y = sample_noise(vert, 4.0, 1.0);
+	float y = sample_noise(vert, Octaves, Frequency);
 	
-	VERTEX.y += y * 15.0;
+	VERTEX.y += y * Amplitude;
 	COLOR.rgb = vec3(y);
 }
 

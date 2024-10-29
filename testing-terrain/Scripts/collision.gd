@@ -8,7 +8,7 @@ extends CollisionShape3D
 @export var Octaves: int = 5.0
 @export var Frequency: float = 2.0
 @export var Amplitude: float = 1.0
-
+@export var Terrain: MeshInstance3D
 
 
 func rebuild():
@@ -28,6 +28,11 @@ func rebuild():
 	new_shape.set_map_data(height_array)
 	shape = new_shape
 	print(height_array.size())
+	
+	Terrain.material_override.set("shader_parameter/Octaves", Octaves)
+	Terrain.material_override.set("shader_parameter/Frequency", Frequency)
+	Terrain.material_override.set("shader_parameter/Amplitude", Amplitude)
+
 
 func sample_noise(p, octaves, freq):
 	var value: float = 0.0
