@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://cjx4lrj7cucl3"]
+
+[ext_resource type="Shader" path="res://Scripts/Chunk.gdshader" id="1_cd1xe"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ik8kq"]
+render_priority = 0
+shader = ExtResource("1_cd1xe")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_wwb2b"]
+size = Vector2(100, 100)
+subdivide_width = 99
+subdivide_depth = 99
+
+[node name="Chunk" type="MeshInstance3D"]
+material_override = SubResource("ShaderMaterial_ik8kq")
+mesh = SubResource("PlaneMesh_wwb2b")

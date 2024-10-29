@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://5e1oj48aekmi"]
+
+[ext_resource type="Script" path="res://collision.gd" id="1_26qfa"]
+
+[sub_resource type="HeightMapShape3D" id="HeightMapShape3D_yxag4"]
+map_width = 6
+map_depth = 6
+map_data = PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+
+[node name="Collision" type="CollisionShape3D"]
+shape = SubResource("HeightMapShape3D_yxag4")
+script = ExtResource("1_26qfa")
+length = 5
+Frequency = 5.0
+Amplitude = null
